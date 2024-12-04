@@ -70,7 +70,7 @@ const Index = () => {
           <Button
             onClick={rollDice}
             disabled={isRolling}
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-xl"
+            className="bg-red-500 hover:bg-red-600 text-white px-8 py-6 text-xl"
           >
             {isRolling ? "擲骰子中..." : "擲骰子"}
           </Button>
