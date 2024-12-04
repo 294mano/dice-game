@@ -14,7 +14,6 @@ const Index = () => {
   const rollDice = () => {
     setIsRolling(true);
     
-    // 延遲顯示結果以配合動畫
     setTimeout(() => {
       const newPlayerDice = Math.floor(Math.random() * 6) + 1;
       const newComputerDice = Math.floor(Math.random() * 6) + 1;
@@ -23,7 +22,6 @@ const Index = () => {
       setComputerDice(newComputerDice);
       setIsRolling(false);
 
-      // 判斷勝負
       if (newPlayerDice > newComputerDice) {
         setScores(prev => ({ ...prev, wins: prev.wins + 1 }));
         toast({
@@ -46,6 +44,16 @@ const Index = () => {
     }, 1000);
   };
 
+  const resetGame = () => {
+    setPlayerDice(1);
+    setComputerDice(1);
+    setScores({ wins: 0, losses: 0, ties: 0 });
+    toast({
+      title: "遊戲已重置",
+      description: "所有分數已歸零，開始新的遊戲吧！",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-secondary p-8">
       <div className="max-w-2xl mx-auto">
@@ -58,13 +66,21 @@ const Index = () => {
           <Dice value={computerDice} isRolling={isRolling} player="computer" />
         </div>
 
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center gap-4 mb-12">
           <Button
             onClick={rollDice}
             disabled={isRolling}
             className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-xl"
           >
             {isRolling ? "擲骰子中..." : "擲骰子"}
+          </Button>
+          
+          <Button
+            onClick={resetGame}
+            variant="outline"
+            className="px-8 py-6 text-xl"
+          >
+            重新開始
           </Button>
         </div>
 
