@@ -6,7 +6,7 @@ interface ScoreboardProps {
 
 const Scoreboard = ({ wins, losses, ties }: ScoreboardProps) => {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 animate-fade-in">
+    <div className="bg-green-400/20 backdrop-blur-sm rounded-lg p-6 animate-fade-in">
       <h2 className="text-xl font-bold text-primary mb-4">戰績</h2>
       <div className="grid grid-cols-3 gap-4 text-center">
         <div>
