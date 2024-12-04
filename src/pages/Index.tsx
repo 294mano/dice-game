@@ -57,9 +57,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-secondary p-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-bold text-primary text-center mb-12">
-          擲骰子比大小
+        <h1 className="text-4xl font-bold text-yellow-400 text-center mb-4">
+          開幕酬賓:買500元,即可玩擲骰子遊戲
         </h1>
+        <p className="text-xl text-sky-300 text-center mb-12">
+          5戰3勝者,獲100元折價券一張
+        </p>
         
         <div className="grid grid-cols-2 gap-12 mb-12">
           <Dice value={playerDice} isRolling={isRolling} player="player" />
