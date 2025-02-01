@@ -1,4 +1,5 @@
 # Welcome to your Lovable project
+本專案是由Lovable平台所建立. mano chen note_250201
 
 ## Project info
 
